@@ -50,6 +50,9 @@ cargo_build_script(
     {%- endif %}
     rustc_flags = [
         "--cap-lints=allow",
+        {%- for key, value in crate.raze_settings.buildrs_additional_rustc_flags %}
+        "{{key}}": "{{value}}",
+        {%- endfor %}
     ],
     tags = [
         "cargo-raze",

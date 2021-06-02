@@ -126,6 +126,10 @@ pub struct RazeSettings {
    */
   #[serde(default = "default_raze_settings_experimental_api")]
   pub experimental_api: bool,
+
+  /// Flags to be added to all crates compilation process, in the form "--flag".
+  #[serde(default)]
+  pub additional_flags: Vec<String>,
 }
 
 /// Override settings for individual crates (as part of `RazeSettings`).

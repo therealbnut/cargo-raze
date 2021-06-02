@@ -368,7 +368,9 @@ impl<'planner> CrateSubplanner<'planner> {
 
     // Generate canonicalized paths to additional build files so they're guaranteed to exist
     // and always locatable.
-    let raze_settings = self.crate_settings.cloned().unwrap_or_default();
+    let mut raze_settings = self.crate_settings.cloned().unwrap_or_default();
+    raze_settings.additional_flags.splice(0..0, self.settings.additional_flags.iter().cloned());
+
     let canonical_additional_build_file = match &raze_settings.additional_build_file {
       Some(build_file) => Some(
         cargo_workspace_root
