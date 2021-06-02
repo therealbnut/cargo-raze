@@ -812,6 +812,7 @@ pub mod tests {
       rust_rules_workspace_name: default_raze_settings_rust_rules_workspace_name(),
       vendor_dir: default_raze_settings_vendor_dir(),
       experimental_api: default_raze_settings_experimental_api(),
+      additional_flags: vec![],
     }
   }
 
