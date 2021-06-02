@@ -482,6 +482,8 @@ struct RawRazeSettings {
   pub vendor_dir: Option<String>,
   #[serde(default)]
   pub experimental_api: Option<bool>,
+  #[serde(default)]
+  pub additional_flags: Vec<String>,
 }
 
 impl RawRazeSettings {
